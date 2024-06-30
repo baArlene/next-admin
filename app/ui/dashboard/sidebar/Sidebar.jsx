@@ -97,6 +97,10 @@ const Sidebar = () => {
           </li>
         ))}
       </ul>
+      <button className={styles.logout}>
+        <MdLogout size={24} />
+        Logout
+        </button>
     </div>
   )
 }
