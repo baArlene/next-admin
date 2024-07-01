@@ -37,11 +37,11 @@
 }
 
 .pending{
-  background-color: #f7cb7375;
+  background-color: #ecee7575;
 }
 
 .done{
-  background-color: #afd6ee75;
+  background-color: #0cba2975;
 }
 
 .cancelled{
