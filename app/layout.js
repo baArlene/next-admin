@@ -1,7 +1,14 @@
-import { Inter } from 'next/font/google'
+
+import { Outfit } from 'next/font/google'
+
 import './ui/globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+
+const outfit = Outfit({
+  subsets: ['latin'],
+  weight: ['300','400', '500', '600', '700', '800', '900'],
+  style: ['normal'],
+});
 
 export const metadata = {
   title: 'Carlos Next.js Admin Dashboard',
@@ -11,7 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={outfit.className}>{children}</body>
     </html>
   )
 }

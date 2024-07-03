@@ -1,3 +1,4 @@
+import Pagination from '@/app/ui/dashboard/pagination/Pagination'
 import Search from '@/app/ui/dashboard/search/Search'
 import styles from '@/app/ui/dashboard/users/users.module.css'
 import Image from 'next/image'
@@ -63,6 +64,7 @@ const UsersPage = () => {
           </tr>
         </tbody>
       </table>
+      <Pagination />
     </div>
   )
 }
