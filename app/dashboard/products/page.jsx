@@ -6,7 +6,7 @@ import Pagination from "@/app/ui/dashboard/pagination/Pagination";
 import { searchParams } from "next/navigation";
 import { fetchProducts } from "@/app/lib/data";
 
-const ProductsPage = async() => {
+const ProductsPage = async({searchParams}) => {
 
   const q = searchParams?.q || "";
 
@@ -70,7 +70,7 @@ const ProductsPage = async() => {
           ))}
         </tbody>
       </table>
-      <Pagination />
+      <Pagination count={count} page={page} />
     </div>
   );
 };
