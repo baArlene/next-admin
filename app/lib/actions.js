@@ -5,7 +5,7 @@ import { Product, User } from "./models";
 import { connectToDB } from "./utils";
 import { redirect } from "next/navigation";
 import bcrypt from "bcrypt";
-// import { signIn } from "../auth";
+import { signIn } from "../auth";
 
 export const addUser = async (formData) => {
   const { username, email, password, phone, address, isAdmin, isActive } =
@@ -70,7 +70,7 @@ export const updateUser = async (formData) => {
 };
 
 export const addProduct = async (formData) => {
-  const { title, description, price, stock, color, size } =
+  const { title, desc, price, stock, color, size } =
     Object.fromEntries(formData);
 
   try {
@@ -78,7 +78,7 @@ export const addProduct = async (formData) => {
 
     const newProduct = new Product({
       title,
-      description,
+      desc,
       price,
       stock,
       color,
@@ -96,7 +96,7 @@ export const addProduct = async (formData) => {
 };
 
 export const updateProduct = async (formData) => {
-  const { id, title, description, price, stock, color, size } =
+  const { id, title, desc, price, stock, color, size } =
     Object.fromEntries(formData);
 
   try {
@@ -104,7 +104,7 @@ export const updateProduct = async (formData) => {
 
     const updateFields = {
       title,
-      description,
+      desc,
       price,
       stock,
       color,
@@ -154,7 +154,7 @@ export const deleteProduct = async (formData) => {
   revalidatePath("/dashboard/products");
 };
 
-export const authenticate = async (prevState, formData) => {
+export const authenticate = async (formData) => {
   const { username, password } = Object.fromEntries(formData);
 
   try {
